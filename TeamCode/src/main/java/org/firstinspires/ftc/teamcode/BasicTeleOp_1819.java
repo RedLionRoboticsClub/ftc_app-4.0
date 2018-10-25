@@ -51,19 +51,16 @@ public class BasicTeleOp_1819 extends LinearOpMode {
                 //robot.motorBL.setPower(yValue);
                 robot.motorFR.setPower(-xValue);
                 robot.motorBR.setPower(-xValue);
-
             }
             if (gamepad1.right_bumper > 0) {
                 robot.hopperT.setpower(1);
                 robot.hopperB.setpower(-1);
-                }
+            }
             else if (gamepad1.left_bumper > 0) {
                 robot.hopperT.setpower(-1);
                 robot.hopperB.setPower(1);
-                }
             }
-
         }
-
     }
 }
+
