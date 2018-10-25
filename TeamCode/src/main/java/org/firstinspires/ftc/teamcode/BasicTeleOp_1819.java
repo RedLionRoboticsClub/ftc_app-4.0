@@ -30,15 +30,15 @@ public class BasicTeleOp_1819 extends LinearOpMode {
 
             //check for strafing then define X and Y values for standard drive
             if (gamepad1.right_trigger > 0) {
-                robot.motorFR.setPower(-0.5);
-                robot.motorFL.setPower(-0.5);
-                //robot.motorBL.setPower(0.5);
-                //robot.motorBR.setPower(0.5);
+                //robot.motorFR.setPower(-0.5);
+                //robot.motorFL.setPower(-0.5);
+                robot.motorBL.setPower(0.5);
+                robot.motorBR.setPower(0.5);
             } else if (gamepad1.left_trigger > 0) {
-                robot.motorFR.setPower(0.5);
-                robot.motorFL.setPower(0.5);
-                //robot.motorBL.setPower(-0.5);
-                //robot.motorBR.setPower(-0.5);
+                //robot.motorFR.setPower(0.5);
+                //robot.motorFL.setPower(0.5);
+                robot.motorBL.setPower(-0.5);
+                robot.motorBR.setPower(-0.5);
             } else {
                 float yValue = gamepad1.left_stick_y;
                 float xValue = gamepad1.right_stick_y;
@@ -47,11 +47,22 @@ public class BasicTeleOp_1819 extends LinearOpMode {
                 yValue = Range.clip(yValue, -1, 1);
 
                 //set power based on X and Y values
-                robot.motorFL.setPower(yValue);
+                //robot.motorFL.setPower(yValue);
                 //robot.motorBL.setPower(yValue);
                 robot.motorFR.setPower(-xValue);
-                //robot.motorBR.setPower(-xValue);
+                robot.motorBR.setPower(-xValue);
+
             }
+            if (gamepad1.right_bumper > 0) {
+                robot.hopperT.setpower(1);
+                robot.hopperB.setpower(-1);
+                }
+            else if (gamepad1.left_bumper > 0) {
+                robot.hopperT.setpower(-1);
+                robot.hopperB.setPower(1);
+                }
+            }
+
         }
 
     }

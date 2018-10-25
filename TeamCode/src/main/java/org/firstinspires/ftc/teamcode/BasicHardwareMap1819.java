@@ -8,10 +8,12 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 public class BasicHardwareMap1819 {
 
     //Define Motors/Servos
-    public DcMotor  motorFL   = null;
-    public DcMotor  motorFR   = null;
-   /* public DcMotor  motorBL   = null;
-    public DcMotor  motorBR   = null;*/
+    //public DcMotor  motorFL   = null;
+    //public DcMotor  motorFR   = null;
+    public DcMotor  motorBL   = null;
+    public DcMotor  motorBR   = null;
+    public Dcmotor  hopperT   = null;
+    public Dcmotor  hopperB   = null;
 
     // Local OpMode members
     HardwareMap hwMap  = null;
@@ -27,23 +29,31 @@ public class BasicHardwareMap1819 {
         hwMap = ahwMap;
 
         // Define and Initialize Motors/Servos
-        motorFL  = hwMap.get(DcMotor.class, "motorFL");
-        motorFR = hwMap.get(DcMotor.class, "motorFR");
-        //motorBL = hwMap.get(DcMotor.class, "motorBL");
-        //motorBR = hwMap.get(DcMotor.class, "motorBR");
+        //motorFL  = hwMap.get(DcMotor.class, "motorFL");
+        //motorFR = hwMap.get(DcMotor.class, "motorFR");
+        motorBL = hwMap.get(DcMotor.class, "motorBL");
+        motorBR = hwMap.get(DcMotor.class, "motorBR");
+        hopperT = hwMap.get(Dcmotor.class, "hopperT");
+        hopperB = hwMap.get(DcMotor.class, "hopperB");
 
         // Set all motors to zero power
-        motorFL.setPower(0);
-        motorFR.setPower(0);
-        //motorBL.setPower(0);
-        //motorBR.setPower(0);
+
+        //motorFL.setPower(0);
+        //motorFR.setPower(0);
+        motorBL.setPower(0);
+        motorBR.setPower(0);
+        hopperT.setPower(0);
+        hopperB.setPower(0);
 
         // Set all motors to run without encoders.
         // May want to use RUN_USING_ENCODERS if encoders are installed.
-        motorFL.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        motorFR.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        //motorBL.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        //motorBR.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
+        //motorFL.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        //motorFR.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorBL.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorBR.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        hopperT.setMode(Dcmotor.RunMode.RUN_WITHOUT_ENCODER);
+        hopperB.setMode(Dcmotor.RunMode.RUN_WITHOU_ENCODER);
 
         // Define and initialize ALL installed servos
     }

@@ -69,7 +69,8 @@ public class AnthonyWillBeMad extends LinearOpMode {
                     robot.motorFL.setPower(-0.5);
                     robot.motorBL.setPower(0.5);
                     robot.motorBR.setPower(-0.5);
-                } else {
+                } else
+                    {
                     float yValue = gamepad1.left_stick_y;
 
                     float xValue = gamepad1.right_stick_y;
